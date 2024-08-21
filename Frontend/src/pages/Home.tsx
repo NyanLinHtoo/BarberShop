@@ -72,10 +72,14 @@ const Home = () => {
         </p>
 
         <div className="relative z-10 grid grid-flow-col gap-6 pt-5">
-          <Button className="rounded-xl bg-white border py-4 px-8 text-md text-black data-[hover]:bg-transparent data-[hover]:text-white">
+          <Button
+            onClick={() => navigate("/booking")}
+            className="rounded-xl bg-white border py-4 px-8 text-md text-black data-[hover]:bg-transparent data-[hover]:text-white">
             Book Now!
           </Button>
-          <Button className="rounded-xl bg-transparent border py-4 px-8 text-md text-white data-[hover]:bg-white data-[hover]:text-black">
+          <Button
+            onClick={() => navigate("/about")}
+            className="rounded-xl bg-transparent border py-4 px-8 text-md text-white data-[hover]:bg-white data-[hover]:text-black">
             Learn More
           </Button>
         </div>
@@ -166,7 +170,7 @@ const Home = () => {
         <div className="self-end pt-5 me-10">
           <Button
             onClick={() => navigate("/services")}
-            className="rounded-xl bg-white border py-4 px-8 text-md text-black data-[hover]:bg-transparent data-[hover]:text-white">
+            className="rounded-xl bg-white border py-4 px-8 text-md text-black data-[hover]:bg-stone-400 data-[hover]:text-white">
             See all our services
           </Button>
         </div>
@@ -177,7 +181,7 @@ const Home = () => {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
             onClick={closeModal}>
             <div
-              className="bg-white p-8 rounded-lg max-w-3xl w-full flex flex-col sm:flex-row relative"
+              className="bg-white p-8 rounded-lg max-w-3xl w-full flex flex-col sm:flex-row relative space-x-3"
               onClick={(e) => e.stopPropagation()}>
               <button
                 className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
@@ -279,7 +283,7 @@ const Home = () => {
         <div className="self-end pt-5 me-10">
           <Button
             onClick={() => navigate("/hairstylists")}
-            className="rounded-xl bg-white border py-4 px-8 text-md text-black hover:bg-transparent hover:text-white">
+            className="rounded-xl bg-white border py-4 px-8 text-md text-black data-[hover]:bg-stone-400 data-[hover]:text-white">
             See all our Hair stylists
           </Button>
         </div>

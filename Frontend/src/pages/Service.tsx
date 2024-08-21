@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export interface Service {
   id: number;
@@ -96,6 +97,8 @@ const Service = () => {
   const [modalData, setModalData] = useState<Service | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const navigate = useNavigate();
+
   const handleDetailClick = (service: Service) => {
     setModalData(service);
     setIsModalOpen(true);
@@ -164,7 +167,9 @@ const Service = () => {
                   {service.price}
                 </span>
                 <div className="grid grid-flow-col gap-6 pt-5">
-                  <button className="rounded-xl bg-white border py-2 px-4 text-md text-black hover:bg-transparent hover:text-white">
+                  <button
+                    onClick={() => navigate("/booking")}
+                    className="rounded-xl bg-white border py-2 px-4 text-md text-black hover:bg-transparent hover:text-white">
                     Book Now!
                   </button>
                   <button
@@ -216,7 +221,9 @@ const Service = () => {
                 <span className="border-b-2 border-gray-800 w-16 mb-4 block"></span>
                 <p className="mb-4">{modalData.description}</p>
                 <span className="self-end block mb-4">{modalData.price}</span>
-                <button className="rounded bg-white border py-2 px-4 text-md text-black hover:bg-transparent hover:text-white">
+                <button
+                  onClick={() => navigate("/booking")}
+                  className="rounded bg-white border py-2 px-4 text-md text-black hover:bg-stone-400 hover:text-white">
                   Book Now!
                 </button>
               </div>

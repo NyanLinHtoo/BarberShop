@@ -88,12 +88,12 @@ const HairStylists = () => {
           {filteredStylists.map((stylist) => (
             <div
               key={stylist.id}
-              className="relative w-[18rem] h-[14rem] sm:w-[20rem] sm:h-[16rem] lg:w-[25rem] lg:h-[18rem] group">
+              className="relative w-[18rem] h-[18rem] sm:w-[18rem] sm:h-[18rem] lg:w-[18rem] lg:h-[18rem] group">
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src={stylist.image}
                   alt={stylist.name}
-                  className="w-[18rem] h-auto rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
+                  className="w-[18rem] h-[18rem] rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
                 />
                 <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg sm:text-xl">
                   {stylist.name}
