@@ -36,7 +36,10 @@ const NavBar = () => {
           <button
             type="button"
             className="inline-flex items-center p-2 w-9 h-10 text-sm text-black rounded-lg md:hidden hover:bg-gray-700 focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen);
+              setIsDesktop(!isDesktop);
+            }}>
             <span className="sr-only">Open main menu</span>
             <svg
               className="w-5 h-5"
