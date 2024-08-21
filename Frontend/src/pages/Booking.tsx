@@ -55,9 +55,9 @@ const Booking = () => {
         </h4>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 h-[70vh] m-10">
-        <div className="flex flex-col-3 space-x-10">
-          <div className="relative h-[25rem] w-52 self-end overflow-hidden group">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-auto lg:h-[65vh] m-4 lg:m-10">
+        <div className="flex flex-wrap justify-center  lg:flex-row lg:space-y-10 space-x-6 lg:space-x-2">
+          <div className="relative h-64 w-40 lg:h-[20rem] lg:self-end lg:w-36 overflow-hidden group">
             <img
               src="/image/book1.jpg"
               alt=""
@@ -65,7 +65,7 @@ const Booking = () => {
             />
             <div className="absolute inset-3 border border-gray-400 rounded-md"></div>
           </div>
-          <div className="relative h-[25rem] w-52 overflow-hidden group">
+          <div className="relative h-64 w-40 lg:h-[20rem] lg:w-36 overflow-hidden group">
             <img
               src="/image/book2.jpg"
               alt=""
@@ -73,7 +73,7 @@ const Booking = () => {
             />
             <div className="absolute inset-3 border border-gray-400 rounded-md"></div>
           </div>
-          <div className="relative h-[25rem] w-52 self-end overflow-hidden group">
+          <div className="relative h-64 w-40 lg:h-[20rem] lg:self-end lg:w-36 overflow-hidden group">
             <img
               src="/image/book3.jpg"
               alt=""
@@ -83,12 +83,12 @@ const Booking = () => {
           </div>
         </div>
 
-        <div className="p-6">
+        <div className="p-4 lg:p-6">
           <form className="max-w-md mx-auto space-y-6" onSubmit={handleSubmit}>
             <div className="relative z-0 w-full group">
               <label
                 htmlFor="name"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                className="block mb-2 text-sm font-medium text-gray-900">
                 Name
               </label>
               <input
@@ -96,7 +96,7 @@ const Booking = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="block py-3 px-3 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                className="block py-3 px-3 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg "
                 placeholder="Enter your name"
                 required
               />
@@ -104,7 +104,7 @@ const Booking = () => {
             <div className="relative z-0 w-full group">
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                className="block mb-2 text-sm font-medium text-gray-900 ">
                 Email
               </label>
               <input
@@ -112,7 +112,7 @@ const Booking = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block py-3 px-3 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                className="block py-3 px-3 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg "
                 placeholder="name@gmail.com"
                 required
               />
@@ -137,7 +137,7 @@ const Booking = () => {
               <div className="z-0 w-full group">
                 <label
                   htmlFor="time"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  className="block mb-2 text-sm font-medium text-gray-900">
                   Select time:
                 </label>
                 <input
@@ -145,7 +145,7 @@ const Booking = () => {
                   id="time"
                   value={selectedTime}
                   onChange={(e) => setSelectedTime(e.target.value)}
-                  className="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
                   min="09:00"
                   max="18:00"
                   required
@@ -156,16 +156,14 @@ const Booking = () => {
               <input
                 id="terms"
                 type="checkbox"
-                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 "
                 required
               />
               <label
                 htmlFor="terms"
-                className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                className="ml-2 text-sm font-medium text-gray-900 ">
                 I agree with the{" "}
-                <a
-                  href="#"
-                  className="text-blue-600 hover:underline dark:text-blue-500">
+                <a href="#" className="text-blue-600 hover:underline ">
                   terms and conditions
                 </a>
               </label>

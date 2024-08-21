@@ -117,7 +117,7 @@ const Service = () => {
           backgroundImage: `url("/image/homeBg.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "50vh",
+          height: "30vh",
           width: "100%",
         }}
         className="relative flex flex-col items-center justify-center space-y-4 p-4 text-center">

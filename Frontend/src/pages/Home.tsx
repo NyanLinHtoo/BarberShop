@@ -47,6 +47,7 @@ const Home = () => {
 
   return (
     <>
+      {/* Hero Section */}
       <div
         style={{
           backgroundImage: `url("/image/homeBg.jpg")`,
@@ -80,12 +81,13 @@ const Home = () => {
         </div>
       </div>
 
+      {/* About Us Section */}
       <div className="p-5">
         <h5 className="text-2xl sm:text-2xl text-center pb-5 tracking-wider">
           Who are we?
         </h5>
-        <div className="grid grid-cols-2 gap-8">
-          <p className="px-10 py-5 leading-9 tracking-wider">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <p className="px-4 sm:px-10 py-5 leading-9 tracking-wider">
             At [Barbershop Name], we are more than just a place for a haircut—we
             are a community hub where style meets tradition. Our skilled barbers
             are artisans of their craft, combining classic techniques with
@@ -97,8 +99,8 @@ const Home = () => {
             feel your best. Welcome to a barbershop where precision meets
             personalization, and every client is treated like a friend.
           </p>
-          <div className="flex flex-col space-y-6">
-            <div className="relative w-[30rem] h-60 self-end overflow-hidden group">
+          <div className="flex flex-col space-y-6 items-center">
+            <div className="relative w-full max-w-[30rem] h-60 self-end overflow-hidden group">
               <img
                 src="/image/about1.jpg"
                 alt=""
@@ -106,7 +108,7 @@ const Home = () => {
               />
               <div className="absolute inset-3 border border-gray-400 rounded-md"></div>
             </div>
-            <div className="relative w-[30rem] h-64 overflow-hidden group">
+            <div className="relative w-full max-w-[30rem] h-64 overflow-hidden group">
               <img
                 src="/image/faceSkinWax.jpg"
                 alt=""
@@ -118,22 +120,23 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Services Section */}
       <div className="m-10 flex flex-col">
         <h5 className="text-2xl sm:text-2xl text-center pb-5 tracking-wider">
           Our Services
         </h5>
-        <div className="grid grid-cols-3 gap-4 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
           {services.map((service) => (
             <div
               key={service.id}
-              className="relative w-[25rem] h-[18rem] group">
+              className="relative w-full max-w-[25rem] h-[18rem] group">
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-[18rem] rounded-xl transform transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-[18rem] rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
                 />
-                <span className="absolute bottom-10 left-36 text-white">
+                <span className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white text-lg sm:text-xl">
                   {service.title}
                 </span>
               </div>
@@ -168,12 +171,13 @@ const Home = () => {
           </Button>
         </div>
 
+        {/* Modal */}
         {isModalOpen && modalData && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
             onClick={closeModal}>
             <div
-              className="bg-white p-8 rounded-lg max-w-3xl w-full flex relative"
+              className="bg-white p-8 rounded-lg max-w-3xl w-full flex flex-col sm:flex-row relative"
               onClick={(e) => e.stopPropagation()}>
               <button
                 className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
@@ -193,22 +197,17 @@ const Home = () => {
                 </svg>
               </button>
 
-              <div className="relative w-1/2">
+              <div className="w-full sm:w-1/2 h-60 sm:h-72 relative overflow-hidden">
                 <img
                   src={modalData.image}
                   alt={modalData.title}
-                  className="w-full h-auto"
+                  className="absolute w-full h-full object-cover rounded"
                 />
               </div>
-
-              <div className="mt-4 w-1/2 pl-8">
-                <h5 className="text-xl font-bold">{modalData.title}</h5>
-                <span className="border-b-2 border-gray-800 w-16 mb-4 block"></span>
+              <div className="w-full sm:w-1/2 flex flex-col justify-between">
+                <h2 className="text-2xl font-bold mb-4">{modalData.title}</h2>
                 <p className="mb-4">{modalData.description}</p>
-                <span className="self-end block mb-4">{modalData.price}</span>
-                <button className="rounded bg-white border py-2 px-4 text-md text-black hover:bg-transparent hover:text-white">
-                  Book Now!
-                </button>
+                <span className="text-lg font-semibold">{modalData.price}</span>
               </div>
             </div>
           </div>
@@ -220,59 +219,59 @@ const Home = () => {
           backgroundImage: `url("/image/home2.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
+          height: "30vh",
           width: "100%",
         }}
         className="relative flex flex-col items-center justify-center space-y-4 p-4 text-center">
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
-        <p className="text-white px-4 py-2 text-xl sm:text-3xl font-bold relative z-10">
+        <p className="text-white px-4 py-2 text-lg md:text-xl lg:text-3xl font-bold relative z-10">
           Look sharp, feel sharper, and enjoy the difference.
         </p>
-        <p className="text-sm sm:text-lg text-white relative z-10 brightness-75">
-          every man deserves a great cut to enjoy.
+        <p className="text-sm md:text-md lg:text-lg text-white relative z-10 brightness-75">
+          Every man deserves a great cut to enjoy.
         </p>
       </div>
 
-      <div className="m-10 flex flex-col">
-        <h5 className="text-2xl sm:text-2xl text-center pb-5 tracking-wider">
+      <div className="m-6 md:m-10 flex flex-col">
+        <h5 className="text-xl md:text-2xl lg:text-3xl text-center pb-5 tracking-wider">
           Hair Stylists
         </h5>
-        <div className="grid grid-cols-3 gap-4 justify-items-center">
-          <div className="relative w-[25rem] h-[25rem] group">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+          <div className="relative w-[18rem] h-[14rem] sm:w-[20rem] sm:h-[16rem] lg:w-[25rem] lg:h-[18rem] group">
             <div className="relative overflow-hidden rounded-xl">
               <img
                 src="/image/mary.jpg"
-                alt="Hair Cut"
-                className="w-full h-[25rem] rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
+                alt="Ms. Mary"
+                className="w-[18rem] h-auto rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
               />
-              <span className="absolute bottom-10 left-36 text-white font-bold tracking-wider">
+              <span className="absolute bottom-4 left-8 md:bottom-10 md:left-16 lg:bottom-10 lg:left-36 text-white font-bold tracking-wider">
                 Ms. Mary
               </span>
             </div>
           </div>
 
-          <div className="relative w-[25rem] h-[25rem] group">
+          <div className="relative w-[18rem] h-[14rem] sm:w-[20rem] sm:h-[16rem] lg:w-[25rem] lg:h-[18rem] group">
             <div className="relative overflow-hidden rounded-xl">
               <img
                 src="/image/steve.jpg"
-                alt="Hair Cut"
-                className="w-full h-[25rem] rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
+                alt="Mr. Steve"
+                className="w-[18rem] h-auto rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
               />
-              <span className="absolute bottom-10 left-36 text-white font-bold tracking-wider">
-                Mr. Steve
+              <span className="absolute bottom-4 left-8 md:bottom-10 md:left-16 lg:bottom-10 lg:left-36 text-white font-bold tracking-wider">
+                Ms. Mary
               </span>
             </div>
           </div>
 
-          <div className="relative w-[25rem] h-[25rem] group">
+          <div className="relative w-[18rem] h-[14rem] sm:w-[20rem] sm:h-[16rem] lg:w-[25rem] lg:h-[18rem] group">
             <div className="relative overflow-hidden rounded-xl">
               <img
                 src="/image/john.jpg"
-                alt="Hair Cut"
-                className="w-full h-[25rem] rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
+                alt="Mr. John"
+                className="w-[18rem] h-auto rounded-xl transform transition-transform duration-300 group-hover:scale-110 object-cover"
               />
-              <span className="absolute bottom-10 left-36 text-white font-bold tracking-wider">
-                Mr. John
+              <span className="absolute bottom-4 left-8 md:bottom-10 md:left-16 lg:bottom-10 lg:left-36 text-white font-bold tracking-wider">
+                Ms. Mary
               </span>
             </div>
           </div>
@@ -280,25 +279,25 @@ const Home = () => {
         <div className="self-end pt-5 me-10">
           <Button
             onClick={() => navigate("/hairstylists")}
-            className="rounded-xl bg-white border py-4 px-8 text-md text-black data-[hover]:bg-transparent data-[hover]:text-white">
+            className="rounded-xl bg-white border py-4 px-8 text-md text-black hover:bg-transparent hover:text-white">
             See all our Hair stylists
           </Button>
         </div>
       </div>
 
-      <div className="m-10 flex flex-col">
-        <h5 className="text-2xl sm:text-2xl text-center pb-5 tracking-wider">
+      <div className="m-6 md:m-10 flex flex-col">
+        <h5 className="text-xl md:text-2xl lg:text-3xl text-center pb-5 tracking-wider">
           Locations
         </h5>
-        <div className="self-center">
-          {/* <CustomMap /> */}
+        <div className="self-center w-full max-w-4xl">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15504.456344670249!2d100.5889645871582!3d13.711539500000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f642db8a50f%3A0x2abf3b0973ff193f!2sApple%20Hairstyles%20People%20Park!5e0!3m2!1sen!2sth!4v1723910736464!5m2!1sen!2sth"
-            width="600"
+            width="100%"
             height="450"
             allowFullScreen
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"></iframe>
+            referrerPolicy="no-referrer-when-downgrade"
+            className="rounded-xl shadow-lg"></iframe>
         </div>
       </div>
     </>

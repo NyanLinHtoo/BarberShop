@@ -6,23 +6,23 @@ const About = () => {
           backgroundImage: `url("/image/homeBg.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "50vh",
+          height: "30vh",
           width: "100%",
         }}
         className="relative flex flex-col items-center justify-center space-y-4 p-4 text-center">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-75 z-0"></div>
         <h4 className="text-2xl sm:text-3xl font-semibold text-white relative z-10">
-          Who Are We ?
+          Who Are We?
         </h4>
       </div>
 
-      <div>
-        <div className="m-10">
-          <h5 className="text-2xl sm:text-2xl  font-bold text-left pb-5 tracking-wider">
+      <div className="px-4 sm:px-8 lg:px-16 py-8">
+        <div className="mb-10">
+          <h5 className="text-xl sm:text-2xl font-bold text-left pb-5 tracking-wider">
             <i>Brief</i>
           </h5>
-          <p className="mr-20">
+          <p className="text-left leading-relaxed sm:leading-loose">
             At [Barbershop Name], we pride ourselves on being more than just a
             place for a haircut; we are a destination where style, tradition,
             and community come together. Our barbers are true craftsmen,
@@ -35,11 +35,11 @@ const About = () => {
           </p>
         </div>
 
-        <div className="m-10">
-          <h5 className="text-2xl sm:text-2xl font-bold text-left pb-5 tracking-wider">
+        <div className="mb-10">
+          <h5 className="text-xl sm:text-2xl font-bold text-left pb-5 tracking-wider">
             <i>Our Mission</i>
           </h5>
-          <p className="mr-20">
+          <p className="text-left leading-relaxed sm:leading-loose">
             Our mission at [Barbershop Name] is to elevate the barbering
             experience by combining expert craftsmanship with personalized
             service. We are dedicated to helping our clients look and feel their
