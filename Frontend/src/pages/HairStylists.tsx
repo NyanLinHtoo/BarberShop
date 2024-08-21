@@ -72,7 +72,7 @@ const HairStylists = () => {
     <>
       <div
         style={{
-          backgroundImage: `url("/image/frantisek-canik-htm5bLLW2GY-unsplash.jpg")`,
+          backgroundImage: `url("/image/homeBg.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "50vh",

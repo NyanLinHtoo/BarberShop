@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Layout from "../components/Layout";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
@@ -15,6 +19,12 @@ const AppRouter = () => {
       errorElement: <ErrorPage />,
       children: [
         {
+          path: "/",
+          element: <Navigate to="/home" />, // Redirects to /home when at the root path
+        },
+
+        {
+          index: true,
           path: "/home",
           element: <Home />,
         },

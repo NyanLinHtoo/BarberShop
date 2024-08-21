@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <div
         style={{
-          backgroundImage: `url("/image/AdobeStock_334798577_Preview.jpg")`,
+          backgroundImage: `url("/image/footer.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "30vh",
@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div className="z-10">
           <img
-            src="../../public/image/logo.png"
+            src=" /image/logo.png"
             alt="logo"
             className="w-[150px] h-[100px] ms-20 rounded-xl" // Corrected the class for size
           />

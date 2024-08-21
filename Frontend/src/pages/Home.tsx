@@ -49,7 +49,7 @@ const Home = () => {
     <>
       <div
         style={{
-          backgroundImage: `url("/image/frantisek-canik-htm5bLLW2GY-unsplash.jpg")`,
+          backgroundImage: `url("/image/homeBg.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "100vh",
@@ -100,7 +100,7 @@ const Home = () => {
           <div className="flex flex-col space-y-6">
             <div className="relative w-[30rem] h-60 self-end overflow-hidden group">
               <img
-                src="/image/AdobeStock_231500099_Preview.jpg"
+                src="/image/about1.jpg"
                 alt=""
                 className="absolute w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded"
               />
@@ -217,7 +217,7 @@ const Home = () => {
 
       <div
         style={{
-          backgroundImage: `url("/image/andre-reis-o6cWr3SwyNw-unsplash.jpg")`,
+          backgroundImage: `url("/image/home2.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "60vh",

@@ -2,26 +2,47 @@ import moment from "moment";
 import { FormEvent, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"; // Import CSS for the DatePicker
+import { toast } from "sonner";
 
 const Booking = () => {
-  // State to manage form inputs
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const bookingInfo = { name, email, selectedDate, selectedTime };
-    console.log(bookingInfo);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:5050/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingInfo),
+      });
+
+      if (response.ok) {
+        toast.success("Booking email sent successfully!");
+      } else {
+        toast.error("Failed to send booking email.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <>
       <div
         style={{
-          backgroundImage: `url("/image/frantisek-canik-htm5bLLW2GY-unsplash.jpg")`,
+          backgroundImage: `url("/image/homeBg.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "20vh",
@@ -150,9 +171,10 @@ const Booking = () => {
               </label>
             </div>
             <button
+              disabled={isLoading}
               type="submit"
               className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Book Now!!
+              {isLoading ? "Loading..." : "Book Now!!"}
             </button>
           </form>
         </div>
